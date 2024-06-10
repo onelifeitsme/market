@@ -54,8 +54,21 @@
 .MainContent {
   flex: 1;
   padding: 20px;
-  margin-top: 60px; /* для отступа от хедера */
-  margin-bottom: 60px; /* для отступа от футера */
+  margin-right: 20px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+
+.ProductDetail {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  margin-right: 20px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  overflow: hidden;
+
 }
 
 .ProductGrid {
@@ -63,6 +76,8 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   justify-content: center;
+  width: 100%; /* убедитесь, что сетка занимает 100% ширины родительского контейнера */
+  box-sizing: border-box; /* добавьте это для включения паддингов и границ в общую ширину */
 }
 
 .ProductCard {
@@ -71,7 +86,9 @@
   padding: 16px;
   text-align: center;
   margin: 10px;
-  width: 200px;
+  max-width: 200px;
+  height: 200px;/* измените это на 100%, чтобы карточки занимали всю доступную ширину */
+  box-sizing: border-box; /* добавьте это для включения паддингов и границ в общую ширину */
 }
 
 .ProductCard img {
@@ -147,5 +164,16 @@
   background-color: #e0e0e0;
   transform: translateY(-5px);
 }
+
+
+.slider-container {
+  flex: 1;
+  margin-right: 20px; /* Опционально, задайте отступ для разделения слайдера и описания */
+}
+
+.product-description {
+  flex: 2;
+}
+
 
 

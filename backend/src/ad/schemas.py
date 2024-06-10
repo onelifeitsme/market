@@ -2,7 +2,13 @@ from pydantic import BaseModel
 
 
 class AdBase(BaseModel):
-    age: int
+    id: int
+
+
+class AdDetail(AdBase):
+    name: str
+    price: int
+    popular: bool
 
 
 class AdCategoryBase(BaseModel):

@@ -1,5 +1,6 @@
 from backend.src.database import Base
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+from sqlalchemy.orm import relationship
 
 
 class AdCategory(Base):
@@ -7,11 +8,15 @@ class AdCategory(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
 
+    ads = relationship("Ad", back_populates="category")
+
 
 class Ad(Base):
     __tablename__ = 'ad'
-    id = Column(String, primary_key=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(255))
-    phone = Column(String(20))
-    email = Column(String(255))
-    age = Column(Integer)
+    price = Column(Integer)
+    popular = Column(Boolean)
+
+    category_id = Column(Integer, ForeignKey('ad_category.id'))
+    category = relationship("AdCategory", back_populates="ads")

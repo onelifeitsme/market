@@ -1,10 +1,15 @@
-from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import declarative_base
 from backend.src.config import DB_URL, DATABASE_URL_ASYNC
 
+# Создание синхронного движка
+engine = create_engine(DB_URL)
 
-engine = create_async_engine(DATABASE_URL_ASYNC)
-Session = sessionmaker(engine, AsyncSession)
+# Создание сессии
+Session = sessionmaker(engine)
 session = Session()
+
+# Создание базового класса
 Base = declarative_base()
+

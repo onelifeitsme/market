@@ -15,11 +15,11 @@ const SearchBar = () => {
     <div className="SearchBar">
       <input
         type="text"
-        placeholder="Search..."
+        placeholder="Поиск..."
         value={query}
         onChange={handleInputChange}
       />
-      <button onClick={handleSearch}>Search</button>
+      <button onClick={handleSearch}>Найти</button>
     </div>
   );
 };

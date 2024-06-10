@@ -22,7 +22,7 @@ const Categories = () => {
 
   return (
     <div className="Categories">
-      <h2>Categories</h2>
+      {/*<h2>Categories</h2>*/}
       <div className="CategoryGrid">
         {categories.map((category, index) => (
           <div key={index} className="CategoryCard">
