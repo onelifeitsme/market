@@ -54,7 +54,7 @@
 .MainContent {
   flex: 1;
   padding: 20px;
-  margin-right: 20px;
+  /*margin-right: 20px;*/
   margin-top: 60px;
   margin-bottom: 60px;
   overflow: hidden;
@@ -176,4 +176,17 @@
 }
 
 
+@media (width < 472px) {
+  .ProductCard {
+    max-width: none;
+  }
+}
 
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+a:visited {
+  color: #000; /* Цвет ссылки после посещения */
+}

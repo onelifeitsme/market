@@ -44,7 +44,7 @@ const ProductPage = () => {
   ];
 
   return (
-    <main className="ProductDetail">
+    <div className="ProductDetail">
       <div className="slider-container">
         <Slider images={images} />
       </div>
@@ -60,7 +60,7 @@ const ProductPage = () => {
           </>
         )}
       </div>
-    </main>
+    </div>
   );
 };
 

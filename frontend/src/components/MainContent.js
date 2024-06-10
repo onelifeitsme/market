@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import ProductCard from './ProductCard';
+import MainPageProductFeed from './MainPageProductFeed';
+import ProductDetail from "./ProductDetail";
+import {Route, Routes} from "react-router-dom";
+import CategoryDetail from "./CategoryDetail";
+
 
 const MainContent = () => {
   const [products, setProducts] = useState([]);
@@ -23,11 +27,11 @@ const MainContent = () => {
 
   return (
     <main className="MainContent">
-      <div className="ProductGrid">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+      <Routes>
+        <Route path="/" element={<MainPageProductFeed />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/:slug" element={<CategoryDetail />} />
+      </Routes>
     </main>
   );
 };

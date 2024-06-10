@@ -22,12 +22,13 @@ const Categories = () => {
 
   return (
     <div className="Categories">
-      {/*<h2>Categories</h2>*/}
       <div className="CategoryGrid">
         {categories.map((category, index) => (
-          <div key={index} className="CategoryCard">
-            {category.name}
-          </div>
+            <a href={'http://127.0.0.1:8000/ads/cat1/'}>
+              <div key={index} className="CategoryCard">
+                {category.name}
+              </div>
+            </a>
         ))}
       </div>
     </div>
